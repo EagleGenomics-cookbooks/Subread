@@ -9,7 +9,7 @@ log 'Starting Subread recipe'
 include_recipe 'build-essential'
 
 package ['zlib-devel'] do
-    action :install
+  action :install
 end
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{node['Subread']['filename']}" do
@@ -27,7 +27,7 @@ execute "tar zxvf #{node['Subread']['filename']}" do
   not_if { ::File.exist?("#{node['Subread']['install_path']}/#{node['Subread']['dirname']}") }
 end
 
-execute "make -f Makefile.Linux" do
+execute 'make -f Makefile.Linux' do
   cwd "#{node['Subread']['install_path']}/#{node['Subread']['dirname']}/src"
   not_if { ::File.exist?('../bin/exactSNP') }
 end
