@@ -1,9 +1,9 @@
 # Subread
 
+Subread package: high-performance read alignment, quantification and mutation discovery
+
 Description
 ===========
-
-Subread package: high-performance read alignment, quantification and mutation discovery
 
 The Subread package comprises a suite of software programs for processing next-gen sequencing read data including:
 
