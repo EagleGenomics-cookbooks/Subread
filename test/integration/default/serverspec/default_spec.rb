@@ -8,6 +8,6 @@ describe file("/usr/local/subread-1.4.6-p1-source.tar.gz") do
 end
 
 
-describe command('sudo which exactSNP') do
+describe command('which exactSNP') do
   its(:exit_status) { should eq 0 }
 end

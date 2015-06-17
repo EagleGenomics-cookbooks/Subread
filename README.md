@@ -32,7 +32,7 @@ Usage
 License and Authors
 ===================
 
-* Authors:: Bart Ailey (<bart.ailey@eaglegenomics.com>)
+* Authors:: Bart Ailey (<chef@eaglegenomics.com>)
     
 Copyright:: 2015, Eagle Genomics.
     
