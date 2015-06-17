@@ -36,4 +36,8 @@ execute "ln -s #{node['Subread']['install_path']}/#{node['Subread']['dirname']}/
   cwd node['Subread']['bin_path']
 end
 
+execute "chmod -R 755 #{node['Subread']['install_path']}/bin/* ." do
+  cwd node['Subread']['bin_path']
+end
+
 log 'Finished Subread recipe'
