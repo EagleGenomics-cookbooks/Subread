@@ -12,24 +12,26 @@ describe file("/usr/local/subread-1.4.6-p1-source") do
   it { should be_directory }
 end
 
-['/usr/local/bin/exactSNP','/usr/local/bin/featureCounts','/usr/local/bin/subindel','/usr/local/bin/subjunc','/usr/local/bin/subread-align','/usr/local/bin/subread-buildindex'].each do |fileExecutable|
-  describe file(fileExecutable) do
-    it { should be_file }
-     it { should be_executable }
+set :path, '/usr/local/bin/:$PATH'
+
+['exactSNP','featureCounts','subindel','subjunc','subread-align','subread-buildindex'].each do |fileExecutable|
+  describe command("which #{fileExecutable}") do
+    its(:exit_status) { should eq 0 }
   end
   
+  filePath = '/usr/local/bin/' + fileExecutable
   
-end 
-
-['/usr/local/bin/utilities/coverageCount','/usr/local/bin/utilities/globalReassembly','/usr/local/bin/utilities/propmapped','/usr/local/bin/utilities/qualityScores','/usr/local/bin/utilities/removeDup','/usr/local/bin/utilities/subread-fullscan','/usr/local/bin/utilities/subtools'].each do |fileExecutable|
-  describe file(fileExecutable) do
+  describe file(filePath) do
     it { should be_file }
     it { should be_executable }
   end
 end 
 
-set :path, '/usr/local/bin/:$PATH'
-
-describe command('which exactSNP') do
- its(:exit_status) { should eq 0 }
+['coverageCount','globalReassembly','propmapped','qualityScores','removeDup','subread-fullscan','subtools'].each do |fileExecutable|
+  filePath = '/usr/local/bin/utilities/' + fileExecutable
+  
+  describe file(filePath) do
+    it { should be_file }
+    it { should be_executable }
+  end
 end
