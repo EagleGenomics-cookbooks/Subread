@@ -8,6 +8,15 @@ log 'Starting Subread recipe'
 
 include_recipe 'build-essential'
 
+# Placed here for use by serverspec
+cookbook_file 'default_attributes.rb' do
+  path '/tmp/default_attributes.rb'
+  action :create
+  owner 'root'
+  group 'root'
+  mode 0755
+end
+
 package ['zlib-devel'] do
   action :install
 end
