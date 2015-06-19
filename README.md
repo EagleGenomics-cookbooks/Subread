@@ -27,7 +27,13 @@ Requirements
 Usage
 =====
 
+kitchen converge default-centos65 | tee kitchen.log
 
+kitchen login default-centos65
+
+kitchen verify default-centos65
+
+kitchen destroy default-centos65
     
 License and Authors
 ===================

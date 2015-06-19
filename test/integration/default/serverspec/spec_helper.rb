@@ -10,13 +10,11 @@ class PseudoNode
   end
   
   def initialize config_path='/tmp/default_attributes.rb'  
-    puts "initializing in #{Dir.pwd}"
-    
     default = node = override = MyHash.new
 
     eval IO.read(config_path)
     
     @default = default
+    # default hash has all the values now.
   end
-  # default hash has all the values now.
 end

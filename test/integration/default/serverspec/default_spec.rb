@@ -6,18 +6,13 @@ set :backend, :exec
 
 pseudo_node = PseudoNode.new
 
-puts 'loaded config'
-#puts pseudo_node.default['Subread']['version']
+puts 'Subread version = ' + pseudo_node.default['Subread']['version']
 
-describe file("/usr/local/subread-1.4.6-p1-source.tar.gz") do
+describe file("/usr/local/subread-#{pseudo_node.default['Subread']['version']}-source.tar.gz") do
   it { should be_file }
 end
 
-#describe file("/usr/local/subread-#{pseudo_node.default['Subread']['version']}-source.tar.gz") do
-#  it { should be_file }
-#end
-
-describe file("/usr/local/subread-1.4.6-p1-source") do
+describe file("/usr/local/subread-#{pseudo_node.default['Subread']['version']}-source") do
   it { should be_directory }
 end
 
