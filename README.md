@@ -1,6 +1,6 @@
 # Subread
 
-Subread package: high-performance read alignment, quantification and mutation discovery
+Cookbook for installing the Subread package: high-performance read alignment, quantification and mutation discovery
 
 Description
 ===========
