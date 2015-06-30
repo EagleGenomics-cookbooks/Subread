@@ -8,10 +8,6 @@ pseudo_node = PseudoNode.new
 
 puts 'Subread version = ' + pseudo_node.default['Subread']['version']
 
-describe file("/usr/local/subread-#{pseudo_node.default['Subread']['version']}-source.tar.gz") do
-  it { should be_file }
-end
-
 describe file("/usr/local/subread-#{pseudo_node.default['Subread']['version']}-source") do
   it { should be_directory }
 end
