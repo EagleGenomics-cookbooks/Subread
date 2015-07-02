@@ -4,17 +4,9 @@ require_relative './spec_helper'
 # Required by serverspec
 set :backend, :exec
 
-
-
-pseudo_node = PseudoNode.new
-
-puts 'Subread version = ' + pseudo_node.default['Subread']['version']
-
-describe file("/usr/local/subread-#{pseudo_node.default['Subread']['version']}-source") do
+describe file("/usr/local/subread-#{ENV['SUBREAD_VERSION']}-source") do
   it { should be_directory }
 end
-
-set :path, '/usr/local/bin/:$PATH'
 
 ['exactSNP','featureCounts','subindel','subjunc','subread-align','subread-buildindex'].each do |fileExecutable|
 
