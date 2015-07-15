@@ -6,7 +6,6 @@ provisioner:
   name: chef_zero
 
 platforms:
-#  - name: ubuntu-12.04
   - name: centos-6.5
 
 suites:
@@ -14,3 +13,9 @@ suites:
     run_list:
       - recipe[Subread]
     attributes:
+  - name: subread_version
+    run_list:
+      - recipe[Subread]
+    attributes:
+      Subread:
+        version: 1.4.5-p1
