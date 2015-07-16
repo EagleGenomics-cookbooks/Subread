@@ -1,9 +1,9 @@
 # Subread
 
-Cookbook for installing the Subread package: high-performance read alignment, quantification and mutation discovery
-
 Description
 ===========
+
+Cookbook for installing the Subread package: high-performance read alignment, quantification and mutation discovery
 
 The Subread package comprises a suite of software programs for processing next-gen sequencing read data including:
 
@@ -11,9 +11,9 @@ Subread: an accurate and efficient aligner for mapping both genomic DNA-seq read
 Subjunc: an RNA-seq aligner suitable for all purposes of RNA-seq analyses.
 featureCounts: a highly efficient and accurate read summarization program.
 exactSNP: a SNP caller that discovers SNPs by testing signals against local background noises.
-These programs were also implemented in Bioconductor R package Rsubread.
+These programs were also implemented in Bioconductor R package RSubread.
 
-http://subread.sourceforge.net/
+http://Subread.sourceforge.net/
 
 Requirements
 ============
@@ -23,9 +23,12 @@ Requirements
 * Centos 6.5
 * RHEL 6.5
 
-
 Usage
 =====
+Simply include the recipe wherever you would like it installed, such as a run list (recipe[Subread]) or a cookbook (include_recipe 'Subread')
+
+
+## Testing
 
 kitchen converge default-centos65 | tee kitchen.log
 
@@ -39,6 +42,14 @@ License and Authors
 ===================
 
 * Authors:: Bart Ailey (<chef@eaglegenomics.com>)
+* Authors:: Dan Barrel (<chef@eaglegenomics.com>)
+* Authors:: Nick James (<chef@eaglegenomics.com>)
+
+Attributes
+==========
+See attributes/default.rb for default values.
+
+default['Subread']['version']
     
 Copyright:: 2015, Eagle Genomics.
     
