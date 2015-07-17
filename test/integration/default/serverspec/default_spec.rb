@@ -15,7 +15,7 @@ end
   end
   
   describe command("#{file_executable} -v") do
-    its(:stdout) { should contain(ENV['TOPHAT_VERSION']) }
+    its(:stdout) { should contain(ENV['SUBREAD_VERSION']) }
   end
 
   file_path = ENV['SUBREAD_INSTALL_PATH'] + '/bin/' + file_executable
