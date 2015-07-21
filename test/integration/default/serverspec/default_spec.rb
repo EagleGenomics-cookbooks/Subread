@@ -8,14 +8,13 @@ describe file("#{ENV['SUBREAD_INSTALL_PATH']}/subread-#{ENV['SUBREAD_VERSION']}-
   it { should be_directory }
 end
 
-
 ['exactSNP', 'featureCounts', 'subindel', 'subjunc', 'subread-align', 'subread-buildindex'].each do |file_executable|
   describe command("which #{file_executable}") do
     its(:exit_status) { should eq 0 }
   end
-  
+
   describe command("#{file_executable} -v") do
-    its(:stdout) { should contain(ENV['SUBREAD_VERSION']) }
+    its(:stderr) { should contain(ENV['SUBREAD_VERSION']) }
   end
 
   file_path = ENV['SUBREAD_INSTALL_PATH'] + '/bin/' + file_executable

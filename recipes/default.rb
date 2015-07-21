@@ -27,8 +27,8 @@ end
 
 #######################################################
 
-#log 'node filename = ' + node['Subread']['filename']
-#log 'node url = ' + node['Subread']['url']
+# log 'node filename = ' + node['Subread']['filename']
+# log 'node url = ' + node['Subread']['url']
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{node['Subread']['filename']}" do
   source node['Subread']['url']
