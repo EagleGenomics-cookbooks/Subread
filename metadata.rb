@@ -10,6 +10,3 @@ supports 'centos', '= 6.5'
 
 depends 'build-essential'
 depends 'magic_shell'
-
-
-
