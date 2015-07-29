@@ -36,6 +36,12 @@ kitchen verify default-centos65
 
 kitchen destroy default-centos65
     
+Attributes
+==========
+See attributes/default.rb for default values.
+
+default['Subread']['version']
+
 License and Authors
 ===================
 
@@ -43,12 +49,6 @@ License and Authors
 * Authors:: Dan Barrel (<chef@eaglegenomics.com>)
 * Authors:: Nick James (<chef@eaglegenomics.com>)
 
-Attributes
-==========
-See attributes/default.rb for default values.
-
-default['Subread']['version']
-    
 Copyright:: 2015, Eagle Genomics.
     
 Licensed under the Apache License, Version 2.0 (the "License");
