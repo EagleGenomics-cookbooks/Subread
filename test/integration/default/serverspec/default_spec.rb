@@ -26,7 +26,7 @@ end
 end
 
 # these executables need to be accessible by the main Subread code
-['coverageCount', 'propmapped', 'qualityScores', 'removeDup', 'subread-fullscan', 'subtools'].each do |file_executable|
+['coverageCount', 'propmapped', 'globalReassembly', 'qualityScores', 'removeDup', 'subread-fullscan', 'subtools'].each do |file_executable|
   file_path = ENV['SUBREAD_INSTALL_PATH'] + '/bin/utilities/' + file_executable
   describe file(file_path) do
     it { should be_file }

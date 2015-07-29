@@ -26,7 +26,6 @@ Usage
 =====
 Simply include the recipe wherever you would like it installed, such as a run list (recipe[Subread]) or a cookbook (include_recipe 'Subread')
 
-
 ## Testing
 
 kitchen converge default-centos65 | tee kitchen.log
