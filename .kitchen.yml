@@ -6,7 +6,7 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos-6.5
+  - name: centos-6.6
 
 suites:
   - name: default
@@ -18,4 +18,4 @@ suites:
       - recipe[Subread]
     attributes:
       Subread:
-        version: 1.4.5-p1
+        version: 1.4.6-p5

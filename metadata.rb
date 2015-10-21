@@ -4,7 +4,7 @@ maintainer_email 'chef@eaglegenomics.com'
 license 'all_rights'
 description 'Installs/Configures Subread'
 long_description 'Installs/Configures Subread'
-version '1.0.0'
+version '1.0.1'
 
 supports 'centos', '= 6.5'
 
