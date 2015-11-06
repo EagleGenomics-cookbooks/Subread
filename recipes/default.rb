@@ -21,7 +21,7 @@ end
 #######################################################
 # package install
 
-package ['zlib-devel'] do
+package ['zlib-devel', 'tar'] do
   action :install
 end
 
