@@ -12,11 +12,11 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[Subread]
+      - recipe[Subread::default]
     attributes:
   - name: subread_version
     run_list:
-      - recipe[Subread]
+      - recipe[Subread::default]
     attributes:
       Subread:
         version: 1.4.6-p5
