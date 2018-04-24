@@ -1,22 +1,18 @@
----
 driver:
   name: docker
   use_sudo: false
-
 provisioner:
   name: chef_zero
-
 platforms:
-  - name: centos-6.6
-
+- name: centos-6.6
 suites:
-  - name: default
-    run_list:
-      - recipe[Subread::default]
-    attributes:
-  - name: subread_version
-    run_list:
-      - recipe[Subread::default]
-    attributes:
-      Subread:
-        version: 1.4.6-p5
+- name: default
+  run_list:
+  - recipe[Subread::default]
+  attributes:
+- name: subread_version
+  run_list:
+  - recipe[Subread::default]
+  attributes:
+    Subread:
+      version: 1.4.6-p5
