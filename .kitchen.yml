@@ -1,18 +1,24 @@
+---
 driver:
   name: docker
-  use_sudo: false
+
 provisioner:
   name: chef_zero
+  product_version: '14.10'
+  product_name: chef
+  
+verifier:
+  name: inspec
+  sudo_command: . /etc/profile;
+
 platforms:
-- name: centos-6.6
+  - name: ubuntu-18.04
+
 suites:
-- name: default
-  run_list:
-  - recipe[Subread::default]
-  attributes:
-- name: subread_version
-  run_list:
-  - recipe[Subread::default]
-  attributes:
-    Subread:
-      version: 1.4.6-p5
+  - name: default
+    run_list:
+      - recipe[Subread::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
