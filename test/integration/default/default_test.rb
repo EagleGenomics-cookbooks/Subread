@@ -18,5 +18,5 @@ end
 # Check that Subread works
 describe command('featureCounts -v') do
   its(:exit_status) { should eq 0 }
-  its(:stdout) { should match('featureCounts v2.0.0') }
+  its(:stderr) { should match('featureCounts v2.0.0') }
 end
