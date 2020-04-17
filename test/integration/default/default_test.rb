@@ -16,7 +16,7 @@ describe command('which featureCounts') do
 end
 
 # Check that Subread works
-describe command('featureCounts --version') do
+describe command('featureCounts -v') do
   its(:exit_status) { should eq 0 }
-  its(:stdout) { should match('2.0.0') }
+  its(:stdout) { should match('featureCounts v2.0.0') }
 end
