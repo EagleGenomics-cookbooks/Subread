@@ -9,4 +9,6 @@ supports 'ubuntu', '= 18.04'
 source_url 'https://github.com/EagleGenomics-cookbooks/Subread'
 issues_url 'https://github.com/EagleGenomics-cookbooks/Subread/issues'
 version '1.1.0'
+
 depends 'magic_shell'
+depends 'tar'

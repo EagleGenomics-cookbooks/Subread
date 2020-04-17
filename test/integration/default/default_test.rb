@@ -5,14 +5,18 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
-  end
+describe directory('/usr/local/subread-2.0.0-Linux-x86_64') do
+  it { should exist }
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+# Check that executable is in the path
+describe command('which featureCounts') do
+  its(:exit_status) { should eq 0 }
+  its(:stdout) { should match('featureCounts') }
+end
+
+# Check that Subread works
+describe command('featureCounts --version') do
+  its(:exit_status) { should eq 0 }
+  its(:stdout) { should match('2.0.0') }
 end
